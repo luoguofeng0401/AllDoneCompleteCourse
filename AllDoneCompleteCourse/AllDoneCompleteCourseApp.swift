@@ -11,7 +11,7 @@ import SwiftUI
 struct AllDoneCompleteCourseApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppStortingView()
         }
     }
 }
