@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct AppStortingView: View {
+    @StateObject private var viewModel: AppStartingViewModel = .init()
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            switch viewModel.appState {
+            case .auth:
+                Text("Auth View")
+            case .app:
+                NavigationStack {
+                    Text("App")
+                }
+            }
         }
-        .padding()
+        .animation(.spring(), value: viewModel.appState)
     }
 }
 
