@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FactoryKit
 
 struct AppStartingView: View {
     @StateObject private var viewModel: AppStartingViewModel = .init()
@@ -14,7 +15,7 @@ struct AppStartingView: View {
         Group {
             switch viewModel.appState {
             case .auth:
-                Text("Auth View")
+                AuthView()
             case .app:
                 NavigationStack {
                     Text("App")
