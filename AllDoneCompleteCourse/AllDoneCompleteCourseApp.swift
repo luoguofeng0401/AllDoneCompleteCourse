@@ -15,7 +15,7 @@ struct AllDoneCompleteCourseApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AppStortingView()
+            AppStartingView()
         }
     }
 }

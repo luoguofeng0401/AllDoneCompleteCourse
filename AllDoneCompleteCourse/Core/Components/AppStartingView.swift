@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AppStortingView: View {
+struct AppStartingView: View {
     @StateObject private var viewModel: AppStartingViewModel = .init()
     
     var body: some View {
@@ -26,5 +26,5 @@ struct AppStortingView: View {
 }
 
 #Preview {
-    AppStortingView()
+    AppStartingView()
 }
