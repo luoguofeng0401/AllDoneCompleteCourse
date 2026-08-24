@@ -26,7 +26,6 @@ struct AuthView: View {
         .showError(item: $viewModel.error)
         .showAlert(item:$viewModel.alert)
         .hideKeyboardOnTap()
-        .keyboardToolbarDoneButton()
     }
 }
 

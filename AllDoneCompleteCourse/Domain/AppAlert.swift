@@ -42,7 +42,7 @@ extension AppAlert {
         )
     }
     
-    static var mock3: Self {
+    static var empty: Self {
         .init(
             title: .empty,
             message: .empty
