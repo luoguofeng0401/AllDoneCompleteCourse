@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import FactoryKit
+import FirebaseCore
 
 @MainActor
 final class AuthViewModel: ObservableObject {
@@ -20,7 +21,7 @@ final class AuthViewModel: ObservableObject {
     @Published var error: Error?
     @Published var alert: AppAlert?
     @Injected(\.authStore) var authStore
-//    @Injected(\.userStore) var userStore
+    @Injected(\.userStore) var userStore
 //    @Injected(\.todoStore) var todoStore
 }
 
@@ -92,13 +93,13 @@ private extension AuthViewModel {
     
     func creatUserProfild() throws {
         guard let userId = authStore.getAuthenticatedUser()?.uid else { return }
-//        try userStore.createNewUser(user: .init(
-//            userId: userId,
-//            firstName: firstName,
-//            lastName: lastName,
-//            email: email,
-//            dateCreated: .init())
-//        )
+        try userStore.createNewUser(user: .init(
+            userId: userId,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            dateCreated: .init())
+        )
     }
     
     func creatListSetup() throws {
