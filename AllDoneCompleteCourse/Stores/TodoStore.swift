@@ -35,12 +35,12 @@ final class TodoStore: ObservableObject, TodoStoreProtocol {
         let todoLists = try await getAllTodoListsForUserIdQuery(userId: userId)
             .getDocuments(as: TodoList.self)
             .withInboxFirst()
-        let updatedTodoLists = await loadTaskIntoTodoLists(todoLists: todoLists)
+        let updatedTodoLists = await loadTasksIntoTodoLists(todoLists: todoLists)
         return updatedTodoLists
         
     }
     
-    func loadTaskIntoTodoLists(todoLists: [TodoList]) async -> [TodoList] {
+    func loadTasksIntoTodoLists(todoLists: [TodoList]) async -> [TodoList] {
         var updatedTodoLists = todoLists
         await withTaskGroup(of: (Int, [TodoTask]).self) { group in
             for (index, todoList) in  todoLists.enumerated() {
@@ -97,7 +97,7 @@ final class TodoStore: ObservableObject, TodoStoreProtocol {
         }
     }
     
-    func todoListPublisher(userId: String) -> AnyPublisher<[TodoList], Error> {
+    func todoListsPublisher(userId: String) -> AnyPublisher<[TodoList], Error> {
         addListenerForTodoLists(userId: userId)
     }
     

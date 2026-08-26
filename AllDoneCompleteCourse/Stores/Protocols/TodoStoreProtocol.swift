@@ -11,7 +11,7 @@ import Combine
 @MainActor
 protocol TodoStoreProtocol: ObservableObject {
     func getTodoLists(for userId: String) async throws -> [TodoList]
-    func loadTaskIntoTodoLists(todoLists: [TodoList]) async -> [TodoList]
+    func loadTasksIntoTodoLists(todoLists: [TodoList]) async -> [TodoList]
     
     func addTodoList(name: String ,ownerId: String) throws
     func deleteTodoList(todoListId: String) async throws
@@ -20,7 +20,7 @@ protocol TodoStoreProtocol: ObservableObject {
     
     func setupUser(userId: String) throws
     
-    func todoListPublisher(userId: String) -> AnyPublisher<[TodoList], Error>
+    func todoListsPublisher(userId: String) -> AnyPublisher<[TodoList], Error>
     func taskPublisher(todoLists: [TodoList]) -> [String: AnyPublisher<[TodoTask], Error>]
     func removeAllPublishers()
 }

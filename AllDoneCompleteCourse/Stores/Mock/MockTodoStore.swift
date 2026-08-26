@@ -15,7 +15,7 @@ final class MockTodoStore: ObservableObject, TodoStoreProtocol {
         .mocks
     }
     
-    func loadTaskIntoTodoLists(todoLists: [TodoList]) async -> [TodoList] {
+    func loadTasksIntoTodoLists(todoLists: [TodoList]) async -> [TodoList] {
         .mocks
     }
     
@@ -29,7 +29,7 @@ final class MockTodoStore: ObservableObject, TodoStoreProtocol {
     
     func setupUser(userId: String) throws { }
     
-    func todoListPublisher(userId: String) -> AnyPublisher<[TodoList], any Error> {
+    func todoListsPublisher(userId: String) -> AnyPublisher<[TodoList], any Error> {
         Just(.mocks)
         
             .setFailureType(to: Error.self)
