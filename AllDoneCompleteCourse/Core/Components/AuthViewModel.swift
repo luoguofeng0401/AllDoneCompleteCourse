@@ -22,7 +22,7 @@ final class AuthViewModel: ObservableObject {
     @Published var alert: AppAlert?
     @Injected(\.authStore) var authStore
     @Injected(\.userStore) var userStore
-//    @Injected(\.todoStore) var todoStore
+    @Injected(\.todoStore) var todoStore
 }
 
 extension AuthViewModel {
@@ -104,6 +104,7 @@ private extension AuthViewModel {
     
     func creatListSetup() throws {
         guard let userId = authStore.getAuthenticatedUser()?.uid else { return }
+        try todoStore.setupUser(userId: userId)
     }
     
     func triggerForgotPasswordSuccess() {

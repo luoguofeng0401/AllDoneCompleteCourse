@@ -29,6 +29,7 @@ private extension AppStartingViewModel {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 guard let self else { return }
+                self.updateAppState()
             }
             .store(in: &cancellables)
         }
@@ -45,3 +46,4 @@ private extension AppStartingViewModel {
         }
     }
 }
+
