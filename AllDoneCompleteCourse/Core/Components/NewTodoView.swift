@@ -11,7 +11,7 @@ struct NewTodoView: View {
     @State private var name: String = .empty
     @State private var description: String = .empty
     @State private var shouldDismissAfterCOnfirmation: Bool = true
-    var confirmation: (String, String) -> ()
+    var confirmAction: (String, String) -> ()
     var dismissAction: () -> ()
     
     var body: some View {
@@ -81,7 +81,7 @@ fileprivate extension NewTodoView {
                 .font(.title2)
                 .foregroundStyle(Color.appTheme.accent)
                 .button(.press) {
-                    confirmation(name, description)
+                    confirmAction(name, description)
                     resetValues()
                     if shouldDismissAfterCOnfirmation {
                         dismissAction()
@@ -119,7 +119,7 @@ private extension NewTodoView {
 
 fileprivate struct Preview: View {
     var body: some View {
-        NewTodoView(confirmation: {_,_ in}, dismissAction: {})
+        NewTodoView(confirmAction: {_,_ in}, dismissAction: {})
             .padding()
             .infinityFrame()
             .background(Color.appTheme.viewBackground)
