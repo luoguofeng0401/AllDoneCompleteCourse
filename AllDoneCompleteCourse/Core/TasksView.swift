@@ -40,9 +40,9 @@ struct TasksView: View {
         .hideKeyboardOnTap()
         .animation(.spring, value: viewModel.shouldShowEmptyStateForTasks)
         .animation(.spring, value: viewModel.shouldShowEmptySearchStateForTasks)
-//        .sheet(isPresented: $viewModel.shouldShowSettings) {
-//            SettingsView()
-//        }
+        .sheet(isPresented: $viewModel.shouldShowSettings) {
+            SettingsView()
+        }
         .plusFab {
             viewModel.toggleNewTodoView()
         }
@@ -254,6 +254,9 @@ private extension TasksView {
 
 
 #Preview {
-    TasksView()
-        .injectMockData()
+    
+    NavigationStack {
+        TasksView()
+            .injectMockData()
+    }
 }
