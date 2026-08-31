@@ -9,7 +9,7 @@ import Foundation
 
 final class AppInfoStore {
     let name: String = "AllDone"
-    let Description: String = "AllDone is a must app for anyone who want to get their life organized. It help you manage your tasks."
+    let description: String = "AllDone is a must app for anyone who want to get their life organized. It help you manage your tasks."
     let developer: String = "Guofeng Luo"
     var version: String {
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {

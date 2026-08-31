@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State var viewModel: SettingsViewModel = .init()
+    @StateObject private var viewModel: SettingsViewModel = .init()
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -40,7 +40,7 @@ private extension SettingsView {
         VStack(spacing: 16) {
             sectionHeader(title: viewModel.appName, sfSymbol: "info.circle")
             divider
-            appDescription
+            appDescriptionView
         }
         .padding()
         .background(Color.appTheme.cellBackground)
@@ -65,7 +65,7 @@ private extension SettingsView {
     
     var appGeneralInfoView: some View {
         VStack(spacing: 16) {
-            sectionHeader(title: "App Info", sfSymble: "person.circle")
+            sectionHeader(title: "App Info", sfSymbol: "person.circle")
             divider
             ForEach(viewModel.appInfoData) { data in
                 infoRow(title: data.name, value: data.info)
@@ -102,7 +102,7 @@ private extension SettingsView {
             }
     }
     
-    var sectionHeader: (title: String, sfSymbol: String) -> some View {
+    func sectionHeader(title: String, sfSymbol: String) -> some View {
         HStack {
             Text(title)
                 .font(.title3)

@@ -30,7 +30,7 @@ extension SettingsViewModel {
     func singOutAttempt() {
         alert = .init(
             title: "Sign out",
-            message: "Are you sure you want to Sign out)?",
+            message: "Are you sure you want to Sign out?",
             actionButton: .init(
                 title: "Sign out",
                 action: {
