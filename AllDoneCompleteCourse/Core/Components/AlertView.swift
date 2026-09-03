@@ -20,7 +20,7 @@ struct AlertView: View {
             messageView
             actionButtons
         }
-        .padding()
+        .padding(12)
         .background(Color.appTheme.cellBackground)
         .cornerRadius(.cell)
         .frame(width: UIScreen.main.bounds.width / 1.2)

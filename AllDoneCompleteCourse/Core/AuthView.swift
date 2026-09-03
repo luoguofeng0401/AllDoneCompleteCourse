@@ -55,7 +55,7 @@ private extension AuthView {
                     .textField(sfSymbol: "person")
                 
                 TextField("Last Name", text: $viewModel.lastName)
-                    .textContentType(.givenName)
+                    .textContentType(.familyName)
                     .textField(sfSymbol: "person")
             }
             
@@ -76,10 +76,8 @@ private extension AuthView {
     
     @ViewBuilder
     var forgotPasswordView: some View {
-        Button("Forgot Password?") {
-            forgotPasswordButtonView
-            forgotPasswordSuccessView
-        }
+        forgotPasswordButtonView
+        forgotPasswordSuccessView
     }
     
     @ViewBuilder

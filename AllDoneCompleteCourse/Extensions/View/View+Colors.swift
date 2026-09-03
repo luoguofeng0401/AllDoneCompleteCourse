@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Color {
-    static var appTheme:AppColorTheme = main
+    static var appTheme: AppColorTheme = main
 }
 
 extension Color {

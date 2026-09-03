@@ -1,5 +1,5 @@
- //
-//  ContentView.swift
+//
+//  AppStartingView.swift
 //  AllDoneCompleteCourse
 //
 //  Created by Guofeng Luo on 2026/8/23.
