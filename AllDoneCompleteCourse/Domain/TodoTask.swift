@@ -51,9 +51,9 @@ extension [TodoTask] {
 
 extension [TodoTask] {
     func partitionedByCompletion(using completedTaskIds: Set<String>) -> (completed: [TodoTask], incomplete: [TodoTask]) {
-        let completed = self.filter {!completedTaskIds.contains($0.id) }
-        let incomplete = self.filter { completedTaskIds.contains($0.id) }
-        return (completed, incomplete)
+        let incompleted = self.filter {!completedTaskIds.contains($0.id) }
+        let complete = self.filter { completedTaskIds.contains($0.id) }
+        return (incompleted, complete)
     }
 }
 
