@@ -30,7 +30,7 @@ struct NewTodoView: View {
     }
 }
 
-fileprivate extension NewTodoView {
+private extension NewTodoView {
     var newTaskView: some View {
         HStack(spacing: 5) {
             Image(systemName: "square")
@@ -49,7 +49,7 @@ fileprivate extension NewTodoView {
                 .opacity(0)
             
             TextEditor(text: $description)
-//                .textEditor(text: $description, placeholder: "Description...")
+                .textEditor(text: $description, placeholder: "Description...")
                 .frame(height: 50)
         }
         .foregroundStyle(Color.appTheme.accent)
@@ -69,7 +69,7 @@ fileprivate extension NewTodoView {
     
     var mainButtons: some View {
         HStack(spacing: 12) {
-            Image(systemName: "rectange.stack")
+            Image(systemName: "rectangle.stack")
                 .font(.title2)
                 .foregroundStyle(shouldDismissAfterCOnfirmation ? Color.appTheme.text : Color.appTheme.alternateAccent)
                 .cornerRadius(.button)
@@ -94,7 +94,7 @@ fileprivate extension NewTodoView {
     }
     
     var dismissButton: some View {
-        Image(systemName: "chevrop.up")
+        Image(systemName: "chevron.up")
             .font(.title2)
             .fontWeight(.light)
             .foregroundStyle(Color.appTheme.destructive)
