@@ -86,7 +86,7 @@ private extension TasksView {
     
     @ViewBuilder
     var newTodoListView: some View {
-        if viewModel.shouldShowNewEntryView {
+        if viewModel.shouldShowNewTodoListView {
             NewTodoListView(
                 confirmAction: { name in
                     Task(handlingError: viewModel) {
